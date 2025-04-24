@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 199290759}
   - component: {fileID: 199290761}
   - component: {fileID: 199290760}
+  - component: {fileID: 199290762}
   m_Layer: 5
   m_Name: Onion
   m_TagString: Untagged
@@ -194,6 +195,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199290758}
   m_CullTransparentMesh: 1
+--- !u!114 &199290762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199290758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.7797884, g: 1, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4.5, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &228588243
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: {fileID: 1174074406}
+  onionImage: {fileID: 0}
 --- !u!1 &234493252
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +770,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367076127}
   m_CullTransparentMesh: 1
+--- !u!1 &382786545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382786546}
+  - component: {fileID: 382786547}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382786546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382786545}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -61.74524, y: -29.867432, z: -6.128725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008616843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382786547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382786545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dbd2388624c8044848d46ebb273eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayText: {fileID: 1174074406}
+  onionImage: {fileID: 199290760}
 --- !u!1 &551058402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1864,7 @@ RectTransform:
   - {fileID: 659287725}
   - {fileID: 1526313817}
   - {fileID: 199290759}
+  - {fileID: 382786546}
   - {fileID: 852494604}
   - {fileID: 265360707}
   - {fileID: 228588244}
