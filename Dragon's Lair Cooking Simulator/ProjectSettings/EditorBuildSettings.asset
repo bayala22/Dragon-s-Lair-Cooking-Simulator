@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Select Screen.unity
     guid: 68467d915d6e943409fe937ec5b75db9
   - enabled: 1
+    path: Assets/Scenes/Tutorial 1.unity
+    guid: b0677fff917e2db41b742c1385a83a07
+  - enabled: 1
+    path: Assets/Scenes/Tutorial 2.unity
+    guid: 200a817d222f75949b1d3b0a8bd2287a
+  - enabled: 1
     path: Assets/Scenes/Gameplay Screen.unity
     guid: 2228a54c187a94a46a7340d86ec093a4
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: f547a979967578447b299b2a75137174
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 6787731093e3fb041873696cfb64150c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

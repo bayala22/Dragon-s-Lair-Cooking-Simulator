@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI; // For UI Image and Outline
+using UnityEngine.SceneManagement; // For scene transitions
 using TMPro; // For TextMeshPro
 
 public class KeyboardLogger : MonoBehaviour
@@ -51,6 +52,13 @@ public class KeyboardLogger : MonoBehaviour
             displayText.text = inputString; // Update UI Text
             Debug.Log("Backspace pressed, string now: " + inputString); // Log to Console
             CheckForOnion(); // Check if "ONION" is still valid
+        }
+
+        // Handle W key for scene transition
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            SceneManager.LoadScene("WinScreen"); // Load the win screen scene
+            Debug.Log("W pressed! Loading WinScreen scene.");
         }
     }
 
