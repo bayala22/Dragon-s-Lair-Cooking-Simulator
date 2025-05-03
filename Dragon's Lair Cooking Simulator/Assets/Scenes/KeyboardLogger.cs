@@ -8,9 +8,12 @@ public class KeyboardLogger : MonoBehaviour
     public TextMeshProUGUI displayText; // Assign TextMeshProUGUI for typed input in the Inspector
     public TextMeshProUGUI popupText; // Assign TextMeshProUGUI for pop-up in the Inspector
     public Image onionImage; // Assign the onion UI Image in the Inspector
+    public Image cuttingBoardImage; // Assign the cutting board UI Image in the Inspector
     private string inputString = ""; // Stores the accumulated input
-    private Outline onionOutline; // Reference to the Outline component
+    private Outline onionOutline; // Reference to the onion's Outline component
+    private Outline cuttingBoardOutline; // Reference to the cutting board's Outline component
     private bool hasTypedOnion = false; // Tracks if "ONION" has been typed
+    private bool hasTypedChop = false; // Tracks if "CHOP" has been typed
 
     void Start()
     {
@@ -30,6 +33,24 @@ public class KeyboardLogger : MonoBehaviour
         else
         {
             Debug.LogError("Onion Image is not assigned in the Inspector.");
+        }
+
+        // Get the Outline component from the cutting board Image
+        if (cuttingBoardImage != null)
+        {
+            cuttingBoardOutline = cuttingBoardImage.GetComponent<Outline>();
+            if (cuttingBoardOutline != null)
+            {
+                cuttingBoardOutline.enabled = false; // Ensure outline is off initially
+            }
+            else
+            {
+                Debug.LogError("Cutting Board Image needs an Outline component.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Cutting Board Image is not assigned in the Inspector.");
         }
 
         // Initialize pop-up text
@@ -76,15 +97,31 @@ public class KeyboardLogger : MonoBehaviour
 
     void CheckForOnionAndChop()
     {
+        // Check for onion outline
         if (onionImage != null && onionOutline != null)
         {
-            // Check if inputString matches "ONION" (case-insensitive)
             bool isOnion = inputString.ToUpper() == "ONION";
             onionOutline.enabled = isOnion;
             if (isOnion && !hasTypedOnion)
             {
                 hasTypedOnion = true; // Mark "ONION" as typed
-                Debug.Log("ONION typed! Enabling outline on onion Image.");
+                inputString = ""; // Clear input
+                displayText.text = inputString; // Clear input UI Text
+                Debug.Log("ONION typed! Enabling outline on onion Image and clearing typebox.");
+            }
+        }
+
+        // Check for cutting board outline
+        if (cuttingBoardImage != null && cuttingBoardOutline != null)
+        {
+            bool isChop = inputString.ToUpper() == "CHOP";
+            cuttingBoardOutline.enabled = hasTypedOnion && isChop;
+            if (isChop && hasTypedOnion && !hasTypedChop)
+            {
+                hasTypedChop = true; // Mark "CHOP" as typed
+                inputString = ""; // Clear input
+                displayText.text = inputString; // Clear input UI Text
+                Debug.Log("CHOP typed after ONION! Enabling outline on cutting board Image and clearing typebox.");
             }
         }
 
@@ -95,13 +132,13 @@ public class KeyboardLogger : MonoBehaviour
             {
                 // After typing "ONION", show "TYPE 'CHOP'" until "CHOP" is typed
                 popupText.text = "TYPE 'CHOP'";
-                popupText.enabled = inputString.ToUpper() != "CHOP";
+                popupText.enabled = !hasTypedChop;
             }
             else
             {
                 // Before typing "ONION", show "TYPE 'ONION'"
                 popupText.text = "TYPE 'ONION'";
-                popupText.enabled = inputString.ToUpper() != "ONION";
+                popupText.enabled = true;
             }
         }
     }
