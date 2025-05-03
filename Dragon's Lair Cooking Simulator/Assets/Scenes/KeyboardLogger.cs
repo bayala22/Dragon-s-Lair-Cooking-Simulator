@@ -5,10 +5,12 @@ using TMPro; // For TextMeshPro
 
 public class KeyboardLogger : MonoBehaviour
 {
-    public TextMeshProUGUI displayText; // Assign TextMeshProUGUI component in the Inspector
+    public TextMeshProUGUI displayText; // Assign TextMeshProUGUI for typed input in the Inspector
+    public TextMeshProUGUI popupText; // Assign TextMeshProUGUI for pop-up in the Inspector
     public Image onionImage; // Assign the onion UI Image in the Inspector
     private string inputString = ""; // Stores the accumulated input
     private Outline onionOutline; // Reference to the Outline component
+    private bool hasTypedOnion = false; // Tracks if "ONION" has been typed
 
     void Start()
     {
@@ -29,6 +31,16 @@ public class KeyboardLogger : MonoBehaviour
         {
             Debug.LogError("Onion Image is not assigned in the Inspector.");
         }
+
+        // Initialize pop-up text
+        if (popupText != null)
+        {
+            popupText.text = "TYPE ONION"; // Set initial pop-up text
+        }
+        else
+        {
+            Debug.LogError("Popup Text is not assigned in the Inspector.");
+        }
     }
 
     void Update()
@@ -39,9 +51,9 @@ public class KeyboardLogger : MonoBehaviour
             if (char.IsLetter(c))
             {
                 inputString += c; // Append the letter
-                displayText.text = inputString; // Update UI Text
+                displayText.text = inputString; // Update input UI Text
                 Debug.Log("Letter pressed: " + c); // Log to Console
-                CheckForOnion(); // Check if "ONION" is typed
+                CheckForOnionAndChop(); // Check for "ONION" or "CHOP"
             }
         }
 
@@ -49,9 +61,9 @@ public class KeyboardLogger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace) && inputString.Length > 0)
         {
             inputString = inputString.Substring(0, inputString.Length - 1); // Remove last character
-            displayText.text = inputString; // Update UI Text
+            displayText.text = inputString; // Update input UI Text
             Debug.Log("Backspace pressed, string now: " + inputString); // Log to Console
-            CheckForOnion(); // Check if "ONION" is still valid
+            CheckForOnionAndChop(); // Check for "ONION" or "CHOP"
         }
 
         // Handle W key for scene transition
@@ -62,15 +74,34 @@ public class KeyboardLogger : MonoBehaviour
         }
     }
 
-    void CheckForOnion()
+    void CheckForOnionAndChop()
     {
         if (onionImage != null && onionOutline != null)
         {
             // Check if inputString matches "ONION" (case-insensitive)
-            onionOutline.enabled = inputString.ToUpper() == "ONION";
-            if (onionOutline.enabled)
+            bool isOnion = inputString.ToUpper() == "ONION";
+            onionOutline.enabled = isOnion;
+            if (isOnion && !hasTypedOnion)
             {
+                hasTypedOnion = true; // Mark "ONION" as typed
                 Debug.Log("ONION typed! Enabling outline on onion Image.");
+            }
+        }
+
+        // Update pop-up text based on state
+        if (popupText != null)
+        {
+            if (hasTypedOnion)
+            {
+                // After typing "ONION", show "TYPE 'CHOP'" until "CHOP" is typed
+                popupText.text = "TYPE 'CHOP'";
+                popupText.enabled = inputString.ToUpper() != "CHOP";
+            }
+            else
+            {
+                // Before typing "ONION", show "TYPE ONION"
+                popupText.text = "TYPE ONION";
+                popupText.enabled = inputString.ToUpper() != "ONION";
             }
         }
     }
