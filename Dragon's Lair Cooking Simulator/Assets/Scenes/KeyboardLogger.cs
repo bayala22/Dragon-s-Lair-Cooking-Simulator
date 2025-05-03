@@ -35,7 +35,7 @@ public class KeyboardLogger : MonoBehaviour
         // Initialize pop-up text
         if (popupText != null)
         {
-            popupText.text = "TYPE ONION"; // Set initial pop-up text
+            popupText.text = "TYPE 'ONION'"; // Set initial pop-up text
         }
         else
         {
@@ -99,8 +99,8 @@ public class KeyboardLogger : MonoBehaviour
             }
             else
             {
-                // Before typing "ONION", show "TYPE ONION"
-                popupText.text = "TYPE ONION";
+                // Before typing "ONION", show "TYPE 'ONION'"
+                popupText.text = "TYPE 'ONION'";
                 popupText.enabled = inputString.ToUpper() != "ONION";
             }
         }
