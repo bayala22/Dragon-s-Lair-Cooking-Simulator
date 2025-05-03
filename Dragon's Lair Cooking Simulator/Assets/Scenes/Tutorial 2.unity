@@ -691,8 +691,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
+  m_sharedMaterial: {fileID: -7080623483450878882, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -902,8 +902,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
+  m_sharedMaterial: {fileID: -7080623483450878882, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1227,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 546, y: -425}
+  m_AnchoredPosition: {x: 352, y: -307}
   m_SizeDelta: {x: 205.9089, y: 87.2909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1310936528
@@ -1752,7 +1752,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1045854042}
-  - {fileID: 1310936527}
   - {fileID: 313984089}
   - {fileID: 1981457660}
   - {fileID: 815875627}
@@ -1768,6 +1767,7 @@ RectTransform:
   - {fileID: 2123860600}
   - {fileID: 544500616}
   - {fileID: 998019483}
+  - {fileID: 1310936527}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2264,7 +2264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.368, y: 291.8}
+  m_AnchoredPosition: {x: 59.368, y: 272.2}
   m_SizeDelta: {x: 549.4335, y: 139.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123860601
@@ -2289,15 +2289,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: How to Make Mystic Mushroom Stew
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
+  m_sharedMaterial: {fileID: -7080623483450878882, guid: 533c16d5f203dae4498f3053f52a43d6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280295554
+  m_fontColor: {r: 0.50980395, g: 0.1254902, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2314,8 +2314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
