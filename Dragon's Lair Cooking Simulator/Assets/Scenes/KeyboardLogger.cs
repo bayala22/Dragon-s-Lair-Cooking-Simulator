@@ -98,11 +98,18 @@ public class KeyboardLogger : MonoBehaviour
             CheckForOnionAndChop(); // Check for "ONION" or "CHOP"
         }
 
-        // Handle W key for scene transition
+        // Handle W key for WinScreen transition
         if (Input.GetKeyDown(KeyCode.W))
         {
             SceneManager.LoadScene("WinScreen"); // Load the win screen scene
             Debug.Log("W pressed! Loading WinScreen scene.");
+        }
+
+        // Handle Q key for LoseScreen transition
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene("LoseScreen"); // Load the lose screen scene
+            Debug.Log("Q pressed! Loading LoseScreen scene.");
         }
     }
 
