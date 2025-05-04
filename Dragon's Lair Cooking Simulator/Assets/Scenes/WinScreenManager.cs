@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // For scene transitions
+using UnityEngine.SceneManagement;
 
 public class WinScreenManager : MonoBehaviour
 {
-    public void GoToTitleScreen()
+    public void GoToMainMenu()
     {
-        SceneManager.LoadScene("Main"); // Replace with your main scene’s name
-        Debug.Log("Main Menu button pressed! Loading Main.");
+        SceneManager.LoadScene("Main"); // Load the main scene
+        Debug.Log("Back to Main Menu button clicked! Loading Main scene.");
     }
 }

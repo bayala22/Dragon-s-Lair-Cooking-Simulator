@@ -1051,10 +1051,10 @@ RectTransform:
   m_Children:
   - {fileID: 1301315395}
   - {fileID: 133864799}
-  - {fileID: 1352359125}
   - {fileID: 749206419}
   - {fileID: 412862587}
   - {fileID: 1710833851}
+  - {fileID: 1352359125}
   - {fileID: 1440610022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1523,8 +1523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.31885, y: -376}
-  m_SizeDelta: {x: 338.5464, y: 87.2909}
+  m_AnchoredPosition: {x: -4, y: -376}
+  m_SizeDelta: {x: 390.3837, y: 87.2909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352359126
 MonoBehaviour:
@@ -1668,8 +1668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.229004, y: -473.1747}
-  m_SizeDelta: {x: 336.73, y: 83.6403}
+  m_AnchoredPosition: {x: -4, y: -473.1747}
+  m_SizeDelta: {x: 390.3837, y: 83.6403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440610023
 MonoBehaviour:
@@ -1714,19 +1714,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1440610024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 3a42e3ad5e060eb4896d4e725c736618, type: 3}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1440610024
 MonoBehaviour:
   m_ObjectHideFlags: 0
