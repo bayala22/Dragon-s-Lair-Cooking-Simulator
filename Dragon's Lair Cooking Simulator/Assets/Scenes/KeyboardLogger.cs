@@ -7,7 +7,8 @@ public class KeyboardLogger : MonoBehaviour
 {
     public TextMeshProUGUI displayText; // Assign TextMeshProUGUI for typed input in the Inspector
     public TextMeshProUGUI popupText; // Assign TextMeshProUGUI for pop-up in the Inspector
-    public Image onionImage; // Assign the onion UI Image in the Inspector
+    public Image onionImage; // Assign the original onion UI Image in the Inspector
+    public Image choppedOnionImage; // Assign the chopped onion UI Image in the Inspector
     public Image cuttingBoardImage; // Assign the cutting board UI Image in the Inspector
     private string inputString = ""; // Stores the accumulated input
     private Outline onionOutline; // Reference to the onion's Outline component
@@ -33,6 +34,16 @@ public class KeyboardLogger : MonoBehaviour
         else
         {
             Debug.LogError("Onion Image is not assigned in the Inspector.");
+        }
+
+        // Initialize chopped onion Image
+        if (choppedOnionImage != null)
+        {
+            choppedOnionImage.enabled = false; // Ensure chopped onion is hidden initially
+        }
+        else
+        {
+            Debug.LogError("Chopped Onion Image is not assigned in the Inspector.");
         }
 
         // Get the Outline component from the cutting board Image
@@ -101,7 +112,7 @@ public class KeyboardLogger : MonoBehaviour
         if (onionImage != null && onionOutline != null)
         {
             bool isOnion = inputString.ToUpper() == "ONION";
-            onionOutline.enabled = isOnion;
+            onionOutline.enabled = isOnion && !hasTypedChop; // Disable outline if CHOP is typed
             if (isOnion && !hasTypedOnion)
             {
                 hasTypedOnion = true; // Mark "ONION" as typed
@@ -111,8 +122,8 @@ public class KeyboardLogger : MonoBehaviour
             }
         }
 
-        // Check for cutting board outline
-        if (cuttingBoardImage != null && cuttingBoardOutline != null)
+        // Check for cutting board outline and onion swap
+        if (cuttingBoardImage != null && cuttingBoardOutline != null && choppedOnionImage != null)
         {
             bool isChop = inputString.ToUpper() == "CHOP";
             cuttingBoardOutline.enabled = hasTypedOnion && isChop;
@@ -121,7 +132,12 @@ public class KeyboardLogger : MonoBehaviour
                 hasTypedChop = true; // Mark "CHOP" as typed
                 inputString = ""; // Clear input
                 displayText.text = inputString; // Clear input UI Text
-                Debug.Log("CHOP typed after ONION! Enabling outline on cutting board Image and clearing typebox.");
+                if (onionImage != null)
+                {
+                    onionImage.enabled = false; // Hide original onion
+                }
+                choppedOnionImage.enabled = true; // Show chopped onion
+                Debug.Log("CHOP typed after ONION! Enabling outline on cutting board Image, hiding onion, showing chopped onion, and clearing typebox.");
             }
         }
 

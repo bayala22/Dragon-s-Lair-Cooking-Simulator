@@ -303,6 +303,8 @@ MonoBehaviour:
   displayText: {fileID: 1174074406}
   popupText: {fileID: 399835793}
   onionImage: {fileID: 199290760}
+  choppedOnionImage: {fileID: 1392552055}
+  cuttingBoardImage: {fileID: 265360708}
 --- !u!1 &234493252
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +422,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265360706}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.566252, y: 2.6199, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1154,6 +1156,8 @@ MonoBehaviour:
   displayText: {fileID: 1174074406}
   popupText: {fileID: 0}
   onionImage: {fileID: 199290760}
+  choppedOnionImage: {fileID: 0}
+  cuttingBoardImage: {fileID: 0}
 --- !u!1 &388429718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2276,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300629810}
   m_CullTransparentMesh: 1
+--- !u!1 &1392552052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392552053}
+  - component: {fileID: 1392552056}
+  - component: {fileID: 1392552055}
+  - component: {fileID: 1392552054}
+  m_Layer: 5
+  m_Name: ChoppedOnion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1392552053
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392552052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.3011, y: 2.3011, z: 2.3011}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2008616843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 9, y: -107}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1392552054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392552052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.7797884, g: 1, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0, y: 0}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1392552055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392552052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -2736496872613386170, guid: 4b3f9ecb57943cc40bb56aea26e3ea27, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1392552056
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392552052}
+  m_CullTransparentMesh: 1
 --- !u!1 &1526313816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 793.31, y: -337.39}
+  m_AnchoredPosition: {x: 793.31, y: -435}
   m_SizeDelta: {x: 167.808, y: 48.4081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728720270
@@ -2874,9 +2969,10 @@ RectTransform:
   - {fileID: 659287725}
   - {fileID: 1526313817}
   - {fileID: 199290759}
+  - {fileID: 265360707}
+  - {fileID: 1392552053}
   - {fileID: 382786546}
   - {fileID: 852494604}
-  - {fileID: 265360707}
   - {fileID: 228588244}
   - {fileID: 503071561}
   - {fileID: 1728720269}
